@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Trip
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 def home(request):
@@ -15,3 +16,15 @@ def trips_index(request):
 def trips_detail(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     return render(request, 'trips/detail.html', {'trip': trip})
+
+class TripCreate(CreateView):
+    model = Trip
+    fields = '__all__'
+
+class TripUpdate(UpdateView):
+    model = Trip
+    fields = '__all__'
+
+class TripDelete(DeleteView):
+    model = Trip
+    success_url = '/trips/'

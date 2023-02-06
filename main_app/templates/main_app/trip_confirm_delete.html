@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Delete Trip</h1>
+
+<h4>
+  Are you SURE you want to delete your trip to 
+  <span class="teal-text">{{ object.place }}</span>?
+</h4>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yep!" class="btn" />
+  <a href="{% url 'detail' trip.id %}">&emsp;No, go back</a>
+</form>
+
+{% endblock %}

@@ -8,6 +8,10 @@
         <p>Age: {{ trip.age }}</p>
         <p>Story: {{ trip.story }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'trips_update' trip.id %}">Edit</a>
+        <a href="{% url 'trips_delete' trip.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}
