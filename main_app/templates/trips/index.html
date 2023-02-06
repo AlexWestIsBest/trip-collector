@@ -4,10 +4,12 @@
 
 {% for trip in trips %}
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ trip.place }}</span>
-    <p>Age: {{ trip.age }}</p>
-    <p>Story: {{ trip.story }}</p>
-  </div>
+  <a href="{% url 'detail' trip.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ trip.place }}</span>
+      <p>Age: {{ trip.age }}</p>
+      <p>Story: {{ trip.story }}</p>
+    </div>
+  </a>
 </div>
 {% endfor %} {% endblock %}
