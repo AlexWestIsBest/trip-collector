@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Companion Details</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ companion.name }}</span>
+        <p>Relation: {{ companion.relation }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'companion_update' companion.id %}">Edit</a>
+        <a href="{% url 'companion_delete' companion.id %}">Delete</a>
+    </div>
+</div>
+
+{% endblock %}

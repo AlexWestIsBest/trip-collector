@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Companion List</h1>
+
+{% for companion in object_list %}
+<div class="card">
+  <a href="{% url 'companion_detail' companion.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ companion.name }}</span>
+      <p>Age: {{ companion.relation }}</p>
+    </div>
+  </a>
+</div>
+{% endfor %} {% endblock %}
